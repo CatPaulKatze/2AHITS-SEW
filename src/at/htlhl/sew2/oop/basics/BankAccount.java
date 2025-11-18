@@ -2,37 +2,15 @@ package at.htlhl.sew2.oop.basics;
 
 public class BankAccount {
 
-    static void main() {
-        BankAccount ba1 = new BankAccount(1, 7f);
-        BankAccount ba2 = new BankAccount(2, 10f);
-        BankAccount ba3 = new BankAccount(3, -1f);
-        BankAccount ba4 = new BankAccount(4, 999f);
-        BankAccount ba5 = new BankAccount(5, -999f);
-        BankAccount[] accounts = {ba1, ba2, ba3, ba4, ba5};
-
-        BankAccount smallestAccount = accounts[0];
-        BankAccount highestAccount = accounts[0];
-
-        for (BankAccount account : accounts) {
-            if (account.getBalance() < smallestAccount.getBalance()) {
-                smallestAccount = account;
-            }
-            if (account.getBalance() > highestAccount.getBalance()) {
-                highestAccount = account;
-            }
-        }
-
-        System.out.println(smallestAccount);
-        System.out.println(highestAccount);
-    }
-
-    @Override
-    public String toString() {
-        return "BankAccount{" + "number=" + number + ", balance=" + balance + '}';
-    }
+    public static final String SEPARATOR = ";";
 
     private final int number;
     private float balance;
+
+    @Override
+    public String toString() {
+        return "BankAccount{" + "number=" + number + ", balance=" + balance + "}";
+    }
 
     public BankAccount(int number, float balance) {
         this.number = number;
@@ -45,6 +23,17 @@ public class BankAccount {
 
     public float getBalance() {
         return this.balance;
+    }
+
+    public static BankAccount valueOf(String input) {
+        return valueOf(input, SEPARATOR);
+    }
+
+    public static BankAccount valueOf(String data, String separator) {
+        String[] parts = data.split(separator);
+        int number = Integer.parseInt(parts[0]);
+        float balance = Float.parseFloat(parts[1]);
+        return new BankAccount(number, balance);
     }
 
     public void deposit(float amount) {
@@ -69,5 +58,34 @@ public class BankAccount {
         if (success) {
             target.deposit(amount);
         }
+    }
+
+    static void main() {
+        /*
+        BankAccount ba1 = new BankAccount(1, 7f);
+        BankAccount ba2 = new BankAccount(2, 10f);
+        BankAccount ba3 = new BankAccount(3, -1f);
+        BankAccount ba4 = new BankAccount(4, 999f);
+        BankAccount ba5 = new BankAccount(5, -999f);
+        BankAccount[] accounts = {ba1, ba2, ba3, ba4, ba5};
+
+        BankAccount smallestAccount = accounts[0];
+        BankAccount highestAccount = accounts[0];
+
+        for (BankAccount account : accounts) {
+            if (account.getBalance() < smallestAccount.getBalance()) {
+                smallestAccount = account;
+            }
+            if (account.getBalance() > highestAccount.getBalance()) {
+                highestAccount = account;
+            }
+        }
+
+        System.out.println(smallestAccount);
+        System.out.println(highestAccount);
+         */
+
+        BankAccount ba1 = BankAccount.valueOf("1234;1000.1f");
+        System.out.println(ba1);
     }
 }
