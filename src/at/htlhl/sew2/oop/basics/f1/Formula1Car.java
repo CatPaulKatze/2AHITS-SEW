@@ -1,8 +1,8 @@
-package at.htlhl.sew2.oop.basics;
+package at.htlhl.sew2.oop.basics.f1;
 
 public class Formula1Car {
-    final String team;
-    final String engine;
+    private final String team;
+    private final String engine;
 
     public Formula1Car(String team, String engine) {
         this.team = team;

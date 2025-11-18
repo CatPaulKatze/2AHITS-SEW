@@ -1,4 +1,4 @@
-package at.htlhl.sew2.oop.basics;
+package at.htlhl.sew2.oop.basics.f1;
 
 import java.util.Arrays;
 import java.time.LocalDate;
@@ -50,10 +50,10 @@ public class RaceAnalysis {
         String[] teamsOnPodium = new String[20];
         String[] bothTeammatesOnPodium = new String[20];
         for (Formula1Driver driver : drivers) {
-            if (Arrays.asList(teamsOnPodium).contains(driver.car.team)) {
-                bothTeammatesOnPodium[Arrays.asList(bothTeammatesOnPodium).indexOf(null)] = driver.car.team;
+            if (Arrays.asList(teamsOnPodium).contains(driver.getCar().getTeam())) {
+                bothTeammatesOnPodium[Arrays.asList(bothTeammatesOnPodium).indexOf(null)] = driver.getCar().getTeam();
             } else {
-                teamsOnPodium[Arrays.asList(teamsOnPodium).indexOf(null)] = driver.car.team;
+                teamsOnPodium[Arrays.asList(teamsOnPodium).indexOf(null)] = driver.getCar().getTeam();
             }
         }
         return bothTeammatesOnPodium;

@@ -1,11 +1,11 @@
-package at.htlhl.sew2.oop.basics;
+package at.htlhl.sew2.oop.basics.f1;
 
 import java.time.LocalDate;
 
 public class Formula1Driver {
-    final String name;
-    final LocalDate dob;
-    final Formula1Car car;
+    private final String name;
+    private final LocalDate dob;
+    private final Formula1Car car;
 
     public Formula1Driver(String name, LocalDate dob, Formula1Car car) {
         this.name = name;
