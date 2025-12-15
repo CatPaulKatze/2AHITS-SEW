@@ -79,6 +79,16 @@ public class SantaLogistics {
         }
     }
 
+    public static ArrayList<Wish> approveOrDenyWishes(ArrayList<Wish> wishes) {
+        ArrayList<Wish> approvedWishes = new ArrayList<Wish>();
+        for (Wish wish : wishes) {
+            if (wish.getChild().isOver18OnChristmasEve() && wish.getChild().isNaughty()) {
+                approvedWishes.add(wish);
+            }
+        }
+        return approvedWishes;
+    }
+
     static void main(String[] args) {
         // TODO - Infos:
         //  1. Analysiere die gegebenen Klassen 'Wish' und 'Child'.
