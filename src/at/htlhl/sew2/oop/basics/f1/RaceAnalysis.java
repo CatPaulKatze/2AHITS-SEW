@@ -14,6 +14,7 @@ public class RaceAnalysis {
         Formula1Driver Antonelli = new Formula1Driver("Andrea Kimi Antonelli", LocalDate.of(2006, 8, 25), mercedesCar);
         Formula1Driver Max = new Formula1Driver("Max Verstappen", LocalDate.of(1997, 9, 30), redBullCar);
         Formula1Driver George = new Formula1Driver("George Russell", LocalDate.of(1998, 2, 15), mercedesCar);
+        System.out.println("Bis jetzt angelegte Fahrer: " + Formula1Driver.getAmountOfDrivers());
         Formula1Driver Oscar = new Formula1Driver("Oscar Piastri", LocalDate.of(2001, 4, 6), mcLarenCar);
         Formula1Driver Oliver = new Formula1Driver("Oliver Bearman", LocalDate.of(2005, 5, 8), HaasCar);
 
